@@ -1,14 +1,30 @@
 package task1;
 
-public class Cat extends Animal{
-    private String color;
+import java.util.Random;
 
-    public Cat(String name, int age, String color) {
-        super(name, age);
-        this.color = color;
+public class Cat extends Animal {
+    private String color;
+    private static String[] names = {"Пушок", "Мурзик", "Мурка", "Барсик",
+            "Леопольд", "Том", "Киса"};
+    private static String[] colors = {"Белый", "Черный", "Рыжий", "Черепаха",
+            "Полосатый", "Серый", "Белые тапочки-лол"};
+
+    public Cat() {
+        Random random = new Random();
+        super(names[random.nextInt(names.length)], random.nextInt(1, 5));
+        this.color = colors[random.nextInt(colors.length)];
     }
 
-    public void slepp(){
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + super.name + '\'' +
+                ", age=" + super.age +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
+    public void slepp() {
         System.out.println("I'm sleepingб because I'm a cat");
     }
 }
