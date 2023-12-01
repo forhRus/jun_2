@@ -3,16 +3,11 @@ package task1;
 import java.util.Random;
 
 public class Dog extends Animal {
-    private static Random random = new Random();
     private int weight;
-    private static String[] names = {"Бим", "Дог", "Белка", "Рекс",
-            "Кексик", "Песель", "Краз"};
-    public Dog() {
-        super(names[random.nextInt(names.length)], random.nextInt(1, 7));
-        this.weight = random.nextInt(20);
+    public Dog(String name, int age, int weight) {
+        super(name, age);
+        this.weight = weight;
     }
-
-
 
     @Override
     public String toString() {
